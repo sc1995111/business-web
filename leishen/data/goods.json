@@ -1,0 +1,10 @@
+[
+    {"id":"001","name":"雷神911Air星战豪华版","img":"../images/911Air.jpg","price":"6299","url":"good.html"},
+    {"id":"002","name":"雷神Masterbook豪华版","img":"../images/002.jpg","price":"7299","url":"good1.html"},
+    {"id":"003","name":"雷神911Air星战青春版","img":"../images/003.jpg","price":"6499","url":"good2.html"},
+    {"id":"004","name":"雷神911Air标准版","img":"../images/004.jpg","price":"5699","url":"good3.html"},
+    {"id":"005","name":"雷神911Air青春版","img":"../images/005.jpg","price":"6299","url":"good4.html"},
+    {"id":"006","name":"雷神911AirMIXBOOK轻薄本","img":"../images/006.jpg","price":"5499","url":"good5.html"},
+    {"id":"007","name":"雷神911Air星战标准版","img":"../images/007.jpg","price":"5999","url":"good6.html"},
+    {"id":"008","name":"雷神911masterbook旗舰版","img":"../images/008.jpg","price":"7699","url":"good7.html"}
+]

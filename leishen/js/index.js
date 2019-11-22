@@ -16,7 +16,7 @@ define([
                 // 获取topnav
                 // alert(obj.topnav.length);
                 for(i = 0;i < obj.topnav.length;i++){
-                    var sub  = `<a class="topnav-title" href="#" id="${i}"><span>${obj.topnav[i].title}</span></a>`;
+                    var sub  = `<a class="topnav-title" href="goods_list.html" target="_blank" id="${i}"><span>${obj.topnav[i].title}</span></a>`;
                     $(sub).appendTo($('#navbox #nav'))
                     if(obj.topnav[i].child){
                         var childArr = obj.topnav[i].child;
@@ -27,9 +27,11 @@ define([
                      for(j = 0; j < childArr.length;j++ ){
                          var node = `
                          <div class="_good">
+                            <a href="good.html" target="_blank">
                              <div><img src="${childArr[j].img}" alt=""></div>
                              <div class="title">${childArr[j].title}</div>
                              <div class="price">${childArr[j].price}</div>
+                             </a>
                          </div>
                          `
                        $(node).appendTo($(`#topnav_list${i}`));

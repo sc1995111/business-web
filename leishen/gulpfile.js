@@ -53,10 +53,40 @@ gulp.task('good-sass',function(){
     .pipe(connect.reload());
 
 })
+gulp.task('good1-sass',function(){
+    return gulp.src('stylesheet/good1.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('dist/css'))
+    .pipe(minifyCss())
+    .pipe(rename('good1.min.css'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(connect.reload());
+
+})
+gulp.task('shopping-car-sass',function(){
+    return gulp.src('stylesheet/shopping_car.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('dist/css'))
+    .pipe(minifyCss())
+    .pipe(rename('shopping_car.min.css'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(connect.reload());
+
+})
+gulp.task('goods-list-sass',function(){
+    return gulp.src('stylesheet/goods_list.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('dist/css'))
+    .pipe(minifyCss())
+    .pipe(rename('goods_list.min.css'))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(connect.reload());
+
+})
 
 //让多次事件一次执行
 
-gulp.task('build',['copy-html','images','data','scripts','sass','good-sass'],function(){
+gulp.task('build',['copy-html','images','data','scripts','sass','good-sass','good1-sass','shopping-car-sass','goods-list-sass'],function(){
     console.log('项目建立完成');
 })
 
@@ -69,6 +99,9 @@ gulp.task('watch',function(){
     gulp.watch('data/*.json',['data']);
     gulp.watch('stylesheet/index.scss',['sass']);
     gulp.watch('stylesheet/good.scss',['good-sass']);
+    gulp.watch('stylesheet/good1.scss',['good1-sass']);
+    gulp.watch('stylesheet/shopping_car.scss',['shopping-car-sass']);
+    gulp.watch('stylesheet/goods_list.scss',['goods-list-sass']);
     gulp.watch('js/*.js',['scripts']);
 })
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登录</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{background: #f5f5f5;}
+        .header{height:161px;text-align: center;padding-top:80px;}
+        .form_box{height:690px;width:1030px;background: white;padding:50px;margin:0 auto;}
+        .form{width:352px;margin:0 auto;}
+        .code{width:200px;}
+        p{text-indent: 20px;margin-bottom: 10px;display: none;}
+        input{display: block;height:40px;width:330px;margin-bottom: 10px;padding-left:20px;}
+        .title{text-align: center;margin-bottom: 30px;height:30px;line-height: 30px;font-size:20px;font-weight:bolder;}
+        button{display: block;height:42px;width:350px;background: cadetblue;margin-bottom: 10px;margin-top:10px;}
+    </style>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script>
+        window.onload = function(){
+            $('.sub').click(function(){  
+                $.ajax({
+                    type:'POST',
+                    url:'../json/login.php',
+                    data:{
+                        username:$('input').eq(0).val(),
+                        password:$('input').eq(1).val(),
+                    },
+                    success:function(result){
+                    var obj = JSON.parse(result);
+                    if(obj.code){
+                        console.log(obj.code)
+                    }else{
+                        console.log('登陆成功')
+                    }
+                    alert(obj.message);
+                },
+                    error:function(msg){
+                        alert(msg);
+                    }
+                })
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="header"><a href="index.html"><img src="../images/logo.png" alt=""></a></div>
+    <div class="form_box">
+        <div class="form">
+            <div class="title">一个帐号，玩转所有雷神官网服务！</div>
+            <input class="user_name" type="text" placeholder="雷神账号/手机号/邮箱">           
+            <input class="password" type="text" placeholder="密码">
+            <p>请输入您的密码</p>
+            <input class="code" type="text" placeholder="请输入验证码">
+            <p>请输入图片中的验证码</p>
+            <button class="sub">立即登录</button>
+            <div><span>没有账号？</span><a href="register.html">点击注册</a></div>
+        </div>
+    </div>
+</body>
+</html>

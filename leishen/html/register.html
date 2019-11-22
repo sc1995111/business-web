@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户注册</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{background: #f5f5f5;}
+        .header{height:161px;text-align: center;padding-top:80px;}
+        .form_box{height:690px;width:1030px;background: white;padding:50px;margin:0 auto;}
+        .form{width:352px;margin:0 auto;}
+        .code{width:200px;}
+        p{text-indent: 20px;margin-bottom: 10px;color:#00bcbf;}
+        input:not(.agree){display: block;height:40px;width:330px;margin-bottom: 10px;padding-left:20px;}
+        .code{display: inline-block;}#canva{display: inline-block;}
+        .title{text-align: center;margin-bottom: 30px;height:30px;line-height: 30px;font-size:20px;font-weight:bolder;}
+        button{display: block;height:42px;width:350px;background: cadetblue;margin-bottom: 10px;margin-top:10px;}
+    </style>
+    <script src="../js/require.js" async = 'true' defer data-main="../js/register_main"></script>
+</head>
+<body>
+    <div class="header"><a href="index.html"><img src="../images/logo.png" alt=""></a></div>
+    <div class="form_box">
+        <div class="form" style="position: relative;">
+            <div class="title">注册雷神官网账号</div>
+            <input class="user_name" type="text" placeholder="用户名">
+            <p class="user_name_p">请输入您要创建的用户昵称</p>
+            <input class="e-mail" type="text" placeholder="e-mail">
+            <p class="e-mail_p">请输入您的邮箱</p>
+            <input class="password" type="text" placeholder="密码">
+            <p class="password_p">请输入您要设置的密码</p>
+            <input class="repassword" type="text" placeholder="确认密码">
+            <p class='repassword_p'>请确认您的密码</p>
+            <input class="tel_num" type="text" placeholder="手机号">
+            <p class="tel_num_p">请输入您的手机号</p>
+            <input class="code" type="text" placeholder="请输入验证码"><canvas id="canvas" width="100" height="43" 
+            style="border: 1px solid #ccc;position: relative;top:-55px;left:190px;
+              border-radius: 5px;margin-left:30px;" onclick = 'draw(testCode(6));'></canvas>
+            <p class="code_p" style="margin-top:-50px;">请输入图片中的验证码</p>
+            <input class="agree" type="checkbox"><span class="agreement">我已看过并接受《<a href="">用户协议</a>》</span>
+            <button class="sub">同意协议并注册</button>
+            <div><span>已有账号？</span><a href="login.html">点击登录</a></div>
+        </div>
+    </div>
+</body>
+</html>

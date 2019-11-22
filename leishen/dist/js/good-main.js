@@ -19,5 +19,6 @@ require(['good'],function(good){
    good.nav_download();
    good.topnav();
    good.sidenav();
+   good.good_des_download()
   
 })
